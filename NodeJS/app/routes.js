@@ -40,13 +40,25 @@ var User = require('./models/User');
           // Save the data
           newUser.save(function(err) {
             if (err) {
-                res.send("There was a problem adding the information to the database. " + err);
-            } else {
-                res.send("Registration was completed successfully.");
-                // Or forward to success page
-                //res.redirect("userlist"); // to the userlist page... if necessory!
+              res.send(err);
             }
+
             res.json({ message: 'User created!' });
+          });
+        });
+
+        app.post('/api/user', function(req, res) {
+          // Get our form values. These rely on the "name" attributes
+
+          var reqUserid = req.body.userid;
+          //aUser.password = req.body.password;
+
+          // Save the data
+          User.find({userid: reqUserid}, function(err, user) {
+            if (err)
+                res.send(err);
+
+            res.json(user);
           });
         });
 
