@@ -112,14 +112,16 @@ var Product = require('./models/product');
             if (err)
                 res.send(err);
 
-                theProduct.productname = req.body.productname;
-                theProduct.productid = req.body.productid;
-                theProduct.productdescription = req.body.productdescription;
-                theProduct.price = req.body.price;
-                theProduct.effectivedate = req.body.effectivedate;
-                theProduct.expirydate = req.body.expirydate;
-                theProduct.ownerid = req.body.ownerid;
-                theProduct.paymentinstruction = req.body.paymentinstruction;
+            //res.send(theProduct);
+
+                //theProduct.productname = req.body.productname;
+                //theProduct.productid = req.body.productid;
+                //theProduct.productdescription = req.body.productdescription;
+                //theProduct.price = req.body.price;
+                //theProduct.effectivedate = req.body.effectivedate;
+                //theProduct.expirydate = req.body.expirydate;
+                //theProduct.ownerid = req.body.ownerid;
+                //theProduct.paymentinstruction = req.body.paymentinstruction;
                 theProduct.image = req.body.image;
 
                 // Save the data
