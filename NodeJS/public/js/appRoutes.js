@@ -13,6 +13,16 @@
         .when('/nerds', {
             templateUrl: 'views/nerd.html',
             controller: 'NerdController'
+        })
+
+        .when('/Register', {
+            templateUrl: 'views/Register.html',
+            controller: 'RegisterController'
+        })
+
+        .when('/Login', {
+            templateUrl: 'views/Login.html',
+            controller: 'LoginController'
         });
 
     $locationProvider.html5Mode(true);
