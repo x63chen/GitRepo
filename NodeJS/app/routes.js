@@ -39,22 +39,16 @@ var User = require('./models/User');
           newUser.comments = req.body.comments;
           // Save the data
           newUser.save(function(err) {
-            if (err)
-                res.send(err);
-
+            if (err) {
+                res.send("There was a problem adding the information to the database. " + err);
+            } else {
+                res.send("Registration was completed successfully.");
+                // Or forward to success page
+                //res.redirect("userlist"); // to the userlist page... if necessory!
+            }
             res.json({ message: 'User created!' });
           });
-
-          res.send("There was a problem adding the information to the database.");
-      }
-      else {
-          res.send("Registration was completed successfully.");
-          // Or forward to success page
-          //res.redirect("userlist"); // to the userlist page... if necessory!
-      }
-
-      });
-    });
+        });
 
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)
