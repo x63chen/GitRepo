@@ -28,3 +28,10 @@
     $locationProvider.html5Mode(true);
 
 }]);
+/*.run(function($rootScope, $location) {
+  $rootScope.$on('$routeChangeStart', function(event, next, current, LoginService) {
+    if(!LoginService.UserAuthenticated()) {
+      $location.path('views/Login.html');
+    }
+  });
+});*/

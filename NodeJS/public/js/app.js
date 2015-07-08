@@ -1,2 +1,3 @@
 // public/js/app.js
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'LoginCtrl', 'RegisterCtrl', 'NerdService']);
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'NerdCtrl', 'LoginCtrl',
+               'RegisterCtrl', 'NerdService', 'LoginService']);
