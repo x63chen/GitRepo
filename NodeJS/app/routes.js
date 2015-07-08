@@ -66,7 +66,7 @@ var Product = require('./models/product');
         // sample api route
         app.get('/api/products', function(req, res) {
             // use mongoose to get all products in the database
-            Product.find(function(err, products) {
+            Product.find({},function(err, products) {
 
                 // if there is an error retrieving, send the error.
                 // nothing after res.send(err) will execute
@@ -86,7 +86,9 @@ var Product = require('./models/product');
             newProduct.effectivedate = req.body.effectivedate;
             newProduct.expirydate = req.body.expirydate;
             newProduct.ownerid = req.body.ownerid;
-            newproduct.paymentinstruction = req.body.paymentinstruction;
+            newProduct.paymentinstruction = req.body.paymentinstruction;
+            newProduct.image = req.body.image;
+
             // Save the data
             newProduct.save(function(err) {
               if (err) {
@@ -99,6 +101,43 @@ var Product = require('./models/product');
               res.json({ message: 'Product created!' });
             });
         });
+
+        app.put('/api/updateproduct', function(req, res) {
+
+          var reqProdid = req.body.productid;
+          //aUser.password = req.body.password;
+
+          // Save the data
+          Product.find({_id: reqProdid}, function(err, theProduct) {
+            if (err)
+                res.send(err);
+
+                theProduct.productname = req.body.productname;
+                theProduct.productid = req.body.productid;
+                theProduct.productdescription = req.body.productdescription;
+                theProduct.price = req.body.price;
+                theProduct.effectivedate = req.body.effectivedate;
+                theProduct.expirydate = req.body.expirydate;
+                theProduct.ownerid = req.body.ownerid;
+                theProduct.paymentinstruction = req.body.paymentinstruction;
+                theProduct.image = req.body.image;
+
+                // Save the data
+                theProduct.save(function(err) {
+                  if (err) {
+                      res.send("There was a problem adding the information to the database. " + err);
+                  } else {
+                      res.send("Product registration was completed successfully.");
+                      // Or forward to success page
+                      //res.redirect("userlist"); // to the userlist page... if necessory!
+                  }
+                  res.json({ message: 'Product created!' });
+                });
+
+          });
+
+        });
+
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)
 

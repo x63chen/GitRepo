@@ -13,5 +13,5 @@ module.exports = mongoose.model('product', {
     expirydate : {type : String, default: ''},
     ownerid : {type : String, default: ''},
     paymentinstruction : {type : String, default: ''},
-
+    image : {type : String, default: ''},
 });
