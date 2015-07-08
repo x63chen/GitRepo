@@ -3,6 +3,7 @@
 // grab the nerd model we just created
 var Nerd = require('./models/nerd');
 var User = require('./models/User');
+var Product = require('./models/product');
 
     module.exports = function(app) {
 
@@ -62,6 +63,42 @@ var User = require('./models/User');
           });
         });
 
+        // sample api route
+        app.get('/api/products', function(req, res) {
+            // use mongoose to get all products in the database
+            Product.find(function(err, products) {
+
+                // if there is an error retrieving, send the error.
+                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(products); // return all products in JSON format
+            });
+        });
+
+        app.post('/api/addproduct', function(req, res) {
+            var newProduct = new Product();
+            newProduct.productname = req.body.productname;
+            newProduct.productid = req.body.productid;
+            newProduct.productdescription = req.body.productdescription;
+            newProduct.price = req.body.price;
+            newProduct.effectivedate = req.body.effectivedate;
+            newProduct.expirydate = req.body.expirydate;
+            newProduct.ownerid = req.body.ownerid;
+            newproduct.paymentinstruction = req.body.paymentinstruction;
+            // Save the data
+            newProduct.save(function(err) {
+              if (err) {
+                  res.send("There was a problem adding the information to the database. " + err);
+              } else {
+                  res.send("Product registration was completed successfully.");
+                  // Or forward to success page
+                  //res.redirect("userlist"); // to the userlist page... if necessory!
+              }
+              res.json({ message: 'Product created!' });
+            });
+        });
         // route to handle creating goes here (app.post)
         // route to handle delete goes here (app.delete)
 
