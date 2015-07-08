@@ -1,14 +1,17 @@
 <!-- public/views/home.html -->
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" >
     <h1>Registration</h1>
-    <label>UserID: <input type="text" ng-model="userid"></input></label><br>
-    <label>First Name:<input type="text" ng-model="firstname"></label><br>
-    <label>Last Name: <input type="text" ng-model="lastname"></input></label><br>
-    <label>Email:<input type="text" ng-model="email"></label><br>
-    <label>Password: <input type="password" ng-model="password"></input></label><br>
-    <label>Address L1:<input type="text" ng-model="addressL1"></label><br>
-    <label>Address L2: <input type="text" ng-model="addressL2"></input></label><br>
-    <label>Phone:<input type="text" ng-model="phone"></label><br>
-    <label>Comments: <input type="text" ng-model="comments"></input></label><br>
+    <label>UserID: <input type="text" ng-model="user.userid"></input></label><br>
+    <label>First Name:<input type="text" ng-model="user.firstname"></label><br>
+    <label>Last Name: <input type="text" ng-model="user.lastname"></input></label><br>
+    <label>Email:<input type="text" ng-model="user.email"></label><br>
+    <label>Password: <input type="password" ng-model="user.password"></input></label><br>
+    <label>Address L1:<input type="text" ng-model="user.addressL1"></label><br>
+    <label>Address L2: <input type="text" ng-model="user.addressL2"></input></label><br>
+    <label>Phone:<input type="text" ng-model="user.phone"></label><br>
+    <label>Comments: <input type="text" ng-model="user.comments"></input></label><br>
+    <p>User JSON: {{user}}</p>
+    <p>Success Message: {{message}}</p>
+    <input type="submit" id="submit" value="submit" ng-click="submit()"/>
 </div>

@@ -1,6 +1,31 @@
-// public/js/controllers/NerdCtrl.js
-angular.module('RegisterCtrl', []).controller('RegisterController', function($scope) {
+// public/js/controllers/RegisterCtrl.js
+angular.module('RegisterCtrl', []).controller('RegisterController', function($scope, $http) {
 
-    $scope.tagline = "We're registering!";
+    $scope.user = {
+      userid : '',
+      firstname : '',
+      lastname : '',
+      email : '',
+      password : '',
+      addressL1 : '',
+      addressL2 : '',
+      phone : '',
+      comments : ''
+    };
 
-});
+    $scope.message = '';
+
+    $scope.submit = function() {
+        $http.post("http://localhost:8080/api/register", $scope.user).
+          success(function(data, status, headers, config) {
+            $scope.message = 'Success!';
+            // this callback will be called asynchronously
+            // when the response is available
+          }).
+          error(function(data, status, headers, config) {
+            $scope.message = 'Failed :(';
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+          });
+    };
+  });
