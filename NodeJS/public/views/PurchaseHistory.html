@@ -1,28 +1,48 @@
 <!-- public/views/home.html -->
 
 <div>
-    <h1>My Purchase History</h1>
+    <h1>My Purchase/Sale History</h1>
     <br><br><br>
-    <div class="row">
-      <div>
-        <table class="table">
-          <th>Product Name</th>
-          <th>Quantity Purchased</th>
-          <th>Total Cost</th>
-          <th>Owner</th>
-          <th>Date Purchased</th>
-          <tr ng-repeat="purchase in myPurchases">
-            <td>{{purchase.productid}}</td>
-            <td>{{purchase.quantity}}</td>
-            <td>{{purchase.cost}}</td>
-            <td>{{purchase.ownerid}}</td>
-            <td>{{purchase.datepurch}}</td>
-          </tr>
-        </table>
+      <div class="col-md-6">
+        <h3>My Purchases</h3>
+        <div class="table-responsive">
+          <table class="table">
+            <th>Product Name</th>
+            <th>Quantity Purchased</th>
+            <th>Total Cost</th>
+            <th>Owner</th>
+            <th>Date Purchased</th>
+            <tr ng-repeat="purchase in myPurchases">
+              <td>{{purchase.productid}}</td>
+              <td>{{purchase.quantity}}</td>
+              <td>{{purchase.cost}}</td>
+              <td>{{purchase.ownerid}}</td>
+              <td>{{purchase.datepurch}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>My Sales</h3>
+        <div class="table-responsive">
+          <table class="table">
+            <th>Product Name</th>
+            <th>Quantity Purchased</th>
+            <th>Total Cost</th>
+            <th>Purchased By</th>
+            <th>Date Purchased</th>
+            <tr ng-repeat="sales in mySales">
+              <td>{{sales.productid}}</td>
+              <td>{{sales.quantity}}</td>
+              <td>{{sales.cost}}</td>
+              <td>{{sales.userid}}</td>
+              <td>{{sales.datepurch}}</td>
+            </tr>
+          </table>
+        </div>
       </div>
       <!--<p>Current Product: {{currentProduct}}</p>
       <p>Current User: {{currentUser}}</p>-->
-    </div>
     <!--<div class="row">
       <h2>Upcoming</h2>
     </div>-->
