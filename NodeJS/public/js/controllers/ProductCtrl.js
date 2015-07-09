@@ -1,25 +1,24 @@
 // public/js/controllers/RegisterCtrl.js
-angular.module('RegisterCtrl', []).controller('RegisterController', function($scope, $http, LoginService) {
+angular.module('ProductCtrl', []).controller('ProductController', function($scope, $http) {
 
-    $scope.user = {
-      userid : '',
-      firstname : '',
-      lastname : '',
-      email : '',
-      password : '',
-      addressL1 : '',
-      addressL2 : '',
-      phone : '',
-      comments : ''
+    $scope.product = {
+      productname : '',
+      productid : '',
+      productdescription : '',
+      price : '',
+      effectivedate : '',
+      expirydate : '',
+      ownerid : '',
+      paymentinstruction : '',
+      image : ''
     };
 
     $scope.message = '';
 
     $scope.submit = function() {
-        $http.post("/api/register", $scope.user).
+        $http.post("http://localhost:8080/api/addproduct", $scope.product).
           success(function(data, status, headers, config) {
             $scope.message = 'Success!';
-            LoginService.loginUser($scope.user);
             // this callback will be called asynchronously
             // when the response is available
           }).
@@ -29,7 +28,4 @@ angular.module('RegisterCtrl', []).controller('RegisterController', function($sc
             // or server returns response with an error status.
           });
     };
-    $scope.login = function() {
-      LoginService.loginUser("login");
-    }
   });

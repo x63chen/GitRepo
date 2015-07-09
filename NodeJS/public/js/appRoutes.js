@@ -20,6 +20,11 @@
             controller: 'RegisterController'
         })
 
+        .when('/AddProduct', {
+            templateUrl: 'views/Product.html',
+            controller: 'ProductController'
+        })
+        
         .when('/Login', {
             templateUrl: 'views/Login.html',
             controller: 'LoginController'
@@ -31,7 +36,7 @@
 .run(function($rootScope, $location,LoginService) {
   $rootScope.$on('$routeChangeStart', function(event, next, current) {
     if(!LoginService.userAuthenticated()) {
-      $location.path('/Login');
+      $location.path('/Register');
     }
   });
 });

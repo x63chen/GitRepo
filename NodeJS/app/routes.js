@@ -88,15 +88,10 @@ var Product = require('./models/product');
             newProduct.ownerid = req.body.ownerid;
             newProduct.paymentinstruction = req.body.paymentinstruction;
             newProduct.image = req.body.image;
-
             // Save the data
             newProduct.save(function(err) {
               if (err) {
-                  res.send("There was a problem adding the information to the database. " + err);
-              } else {
-                  res.send("Product registration was completed successfully.");
-                  // Or forward to success page
-                  //res.redirect("userlist"); // to the userlist page... if necessory!
+                  res.send(err);
               }
               res.json({ message: 'Product created!' });
             });

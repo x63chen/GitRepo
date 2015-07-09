@@ -23,17 +23,17 @@
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/NerdCtrl.js"></script>
     <script src="js/controllers/LoginCtrl.js"></script>
+    <script src="js/controllers/ProductCtrl.js"></script>
     <script src="js/controllers/RegisterCtrl.js"></script>
     <script src="js/services/NerdService.js"></script>
     <script src="js/services/LoginService.js"></script>
     <script src="js/services/ProductService.js"></script>
 
 
-
     <!-- ANGULAR DIRECTIVES -->
     <script src="js/directives/appProduct.js"></script>
 </head>
-<body ng-app="sampleApp">
+<body ng-app="sampleApp" ng-controller="MainController">
 <div class="container">
 
     <!-- HEADER -->
@@ -46,8 +46,8 @@
         <ul class="nav navbar-nav">
             <li><a href="/AddProduct">Add a Product</a></li>
             <li><a href="/RemoveProduct">Remove a Product</a></li>
-            <li><a href="/Register">Register</a></li>
-            <li><a href="/Login">Login</a></li>
+            <li><a id="register" href="/Register">Register</a></li>
+            <!--<li><a href="/Login">Login</a></li>-->
         </ul>
     </nav>
 
