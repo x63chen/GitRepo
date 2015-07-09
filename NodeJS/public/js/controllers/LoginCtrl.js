@@ -1,5 +1,5 @@
 //public/js/controllers/LoginCtrl.js
-angular.module('LoginCtrl', []).controller('LoginController', function($scope, $http) {
+angular.module('LoginCtrl', []).controller('LoginController', function($scope, $http, LoginService) {
   $scope.user = {
     userid: '',
     password: ''
@@ -7,8 +7,9 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope, $
   $scope.submit = function() {
       $http.post("/api/user", $scope.user).
         success(function(data, status, headers, config) {
-          $scope.message = 'Success!' + JSON.stringify(data);
-          console.log(data[0]);
+          LoginService.loginUser(data[0]);
+          $scope.message = 'Success!' + LoginService.getUser();
+          console.log(LoginService.getUser());
           // this callback will be called asynchronously
           // when the response is available
         }).

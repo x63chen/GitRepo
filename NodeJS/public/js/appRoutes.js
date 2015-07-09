@@ -27,11 +27,11 @@
 
     $locationProvider.html5Mode(true);
 
-}]);
-/*.run(function($rootScope, $location) {
-  $rootScope.$on('$routeChangeStart', function(event, next, current, LoginService) {
-    if(!LoginService.UserAuthenticated()) {
-      $location.path('views/Login.html');
+}])
+.run(function($rootScope, $location,LoginService) {
+  $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    if(!LoginService.userAuthenticated()) {
+      $location.path('/Login');
     }
   });
-});*/
+});

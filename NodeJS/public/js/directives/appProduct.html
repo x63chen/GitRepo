@@ -2,3 +2,6 @@
 <h2 class="title">{{info.productname}}</h2>
 <p class="description">{{info.productdescription}}</p>
 <p class="price">{{info.price | currency}}</p>
+<button class="btn btn-active" ng-click="purchase(info)">
+  {{buttonText}}
+</button>

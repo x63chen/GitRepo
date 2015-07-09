@@ -1,7 +1,7 @@
 // public/js/controllers/MainCtrl.js
-angular.module('MainCtrl', []).controller('MainController', function($scope, $http) {
+angular.module('MainCtrl', []).controller('MainController', function($scope, $http, ProductService, LoginService) {
 
-    $http.get("http://localhost:8080/api/products").
+    $http.get("/api/products").
     success(function(data, status, headers, config) {
       $scope.products = data;
     }).
@@ -9,12 +9,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
       // called asynchronously if an error occurs
       // or server returns response with an error status.
     });
-}).directive('app-product', function() {
-  return {
-      restrict: 'E',
-      scope: {
-          info: '='
-      },
-      templateUrl: '/js/directives/appProduct.html'
-  };
+    $scope.currentProduct = ProductService.getProduct();
+    $scope.currentUser = LoginService.userAuthenticated();
+
 });
