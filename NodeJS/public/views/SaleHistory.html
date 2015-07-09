@@ -9,14 +9,14 @@
           <th>Product Name</th>
           <th>Quantity Sold</th>
           <th>Total Revenue</th>
-          <th>Sold to</th>
+      <!--<th>Sold to</th> -->
           <th>Date Sold</th>
           <tr ng-repeat="sale in MySales">
             <td>{{sale.productid}}</td>
             <td>{{sale.quantity}}</td>
-            <td>{{sale.revenue}}</td>
-            <td>{{sale.sellerid}}</td>
-            <td>{{sale.datesold}}</td>
+            <td>{{sale.cost}}</td>
+        <!--<td>{{sale.userid}}</td>-->
+            <td>{{sale.datepurch}}</td>
           </tr>
         </table>
       </div>
