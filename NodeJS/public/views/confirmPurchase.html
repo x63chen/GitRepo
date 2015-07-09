@@ -1,9 +1,43 @@
 <!-- public/views/home.html -->
 <div>
-    <h1>Confirm Purchase</h1>
-    <div>
-      <p>You are about to purchase the following:</p>
-      <p>{{currentProduct}}</p>
+  <h1>Confirm Purchase</h1>
+  <span>You are about to purchase the following:</span>
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table">
+        <tr>
+          <td>Product Name:</td>
+          <td>{{currentProduct.productname}}</td>
+        </tr>
+        <tr>
+          <td>Product Description:</td>
+          <td>{{currentProduct.productdescription}}</td>
+        </tr>
+        <tr>
+          <td>Payment Instructions:</td>
+          <td>{{currentProduct.paymentinstruction}}</td>
+        </tr>
+      </table>
     </div>
-    <input type="submit" id="submit" value="submit" ng-click="submit()"/>
+    <div class="col-sm-4">
+      <table class="table">
+        <tr>
+          <td>Quantity:</td>
+          <td><input type="text" ng-model="quantity"></td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td>{{currentProduct.price | currency}}</td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td>{{currentProduct.price * quantity | currency}}</td>
+        </tr>
+      </table>
+      <div class="pull-right">
+          <input type="submit" id="submit" value="submit" ng-click="submit()"/>
+      </div>
+    </div>
+  </div>
+
 </div>

@@ -4,6 +4,7 @@
     <h1>Welcome to the RBC Employee Giving Fundraising Tool</h1>
     <br><br><br>
     <h2>Current Sales</h2>
+    <br><br>
     <div class="row">
       <div class="col-md-4" ng-repeat="product in products">
         <!--<img class="icon" ng-src="{{product.image}}">
@@ -12,8 +13,8 @@
         <p class="price">{{product.price | currency}}</p>-->
         <app-product info="product"></app-product>
       </div>
-      <p>Current Product: {{currentProduct}}</p>
-      <p>Current User: {{currentUser}}</p>
+      <!--<p>Current Product: {{currentProduct}}</p>
+      <p>Current User: {{currentUser}}</p>-->
     </div>
     <!--<div class="row">
       <h2>Upcoming</h2>
