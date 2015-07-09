@@ -32,6 +32,10 @@
             templateUrl: 'views/Login.html',
             controller: 'LoginCtrl'
         })
+        .when('/PurchaseHistory', {
+            templateUrl: 'views/PurchaseHistory.html',
+            controller: 'PurchaseHistoryCtrl'
+        })
         .when('/Success', {
             templateUrl: 'views/Success.html',
             controller: 'SuccessCtrl'

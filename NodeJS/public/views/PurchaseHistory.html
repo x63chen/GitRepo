@@ -1,0 +1,29 @@
+<!-- public/views/home.html -->
+
+<div>
+    <h1>My Purchase History</h1>
+    <br><br><br>
+    <div class="row">
+      <div>
+        <table class="table">
+          <th>Product Name</th>
+          <th>Quantity Purchased</th>
+          <th>Total Cost</th>
+          <th>Owner</th>
+          <th>Date Purchased</th>
+          <tr ng-repeat="purchase in myPurchases">
+            <td>{{purchase.productid}}</td>
+            <td>{{purchase.quantity}}</td>
+            <td>{{purchase.cost}}</td>
+            <td>{{purchase.ownerid}}</td>
+            <td>{{purchase.datepurch}}</td>
+          </tr>
+        </table>
+      </div>
+      <!--<p>Current Product: {{currentProduct}}</p>
+      <p>Current User: {{currentUser}}</p>-->
+    </div>
+    <!--<div class="row">
+      <h2>Upcoming</h2>
+    </div>-->
+</div>

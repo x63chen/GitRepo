@@ -9,6 +9,7 @@ module.exports = mongoose.model('Purchase', {
     userid    : {type : String, default: ''},
     quantity  : {type : String, default: ''},
     cost      : {type : String, default: ''},
+    ownerid   : {type : String, default: ''},
     productid : {type : String, default: ''},
     datepurch : {type : String, default: ''},
     pmttype   : {type : String, default: ''},
@@ -18,5 +19,5 @@ module.exports = mongoose.model('Purchase', {
     pmtdate   : {type : String, default: ''},
     delivered : {type : String, default: ''},
     delivdate : {type : String, default: ''}
-	
+
  });

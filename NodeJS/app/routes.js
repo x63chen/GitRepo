@@ -104,6 +104,7 @@ var Purchase = require('./models/Purchase')
             newPurchase.userid = req.body.userid;
             newPurchase.quantity = req.body.quantity;
             newPurchase.cost = req.body.cost;
+            newPurchase.ownerid = req.body.ownerid;
             newPurchase.productid = req.body.productid;
             newPurchase.datepurch = req.body.datepurch;
             newPurchase.pmttype = req.body.pmttype;
@@ -121,6 +122,20 @@ var Purchase = require('./models/Purchase')
               res.json({ message: 'Purchase created!' });
             });
         });
+
+        app.post('/api/myPurchases', function(req, res) {
+            // use mongoose to get all products in the database
+            Purchase.find({userid:req.body.userid},function(err, purchases) {
+
+                // if there is an error retrieving, send the error.
+                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(purchases); // return all products in JSON format
+            });
+        });
+
 
         app.put('/api/updateproduct', function(req, res) {
 
