@@ -2,7 +2,7 @@
 
 <div>
     <h1>Login</h1>
-    <table>
+    <table class="table">
       <tr>
         <td><label>UserID:</label></td>
         <td><input type="text" placeholder="Enter UserID" ng-model="user.userid"></input></td>
@@ -12,9 +12,10 @@
         <td><input type="password" placeholder="Enter Password" ng-model="user.password"></td>
       </tr>
     </table>
-    <label>User Name is: {{user.userid}}</label><br>
+    <input type="submit" id="submit" value="submit" class="pull-right" ng-click="submit()"/>
+    <!--<label>User Name is: {{user.userid}}</label><br>
     <label>Password is: {{user.password}}</label><br>
-    <input type="submit" id="submit" value="submit" ng-click="submit()"/>
+
     <p>Debug: {{user}}</p>
-    <p>Success Message: {{message}}</p>
+    <p>Success Message: {{message}}</p>-->
 </div>

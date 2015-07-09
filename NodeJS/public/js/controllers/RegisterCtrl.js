@@ -1,5 +1,5 @@
 // public/js/controllers/RegisterCtrl.js
-app.controller('RegisterCtrl', function($scope, $http, LoginService) {
+app.controller('RegisterCtrl', function($scope, $http, $location, LoginService) {
 
     $scope.user = {
       userid : '',
@@ -19,6 +19,7 @@ app.controller('RegisterCtrl', function($scope, $http, LoginService) {
         $http.post("/api/register", $scope.user).
           success(function(data, status, headers, config) {
             $scope.message = 'Success!';
+            $location.path("/");
             LoginService.loginUser($scope.user);
             // this callback will be called asynchronously
             // when the response is available

@@ -1,14 +1,38 @@
 <!-- public/views/home.html -->
-<div class="jumbotron text-center" >
+<div>
     <h1>Product Registration</h1>
-    <label>Product Name: <input type="text" ng-model="product.productname"></input></label><br>
-    <label>Description:<input type="text" ng-model="product.productdescription"></label><br>
-    <label>price: <input type="text" ng-model="product.price"></input></label><br>
-    <label>Effective from:<input type="text" ng-model="product.effectivedate"></label><br>
-    <label>Expiry Date: <input type="password" ng-model="product.expirydate"></input></label><br>
-    <label>Payment Instructions:<input type="text" ng-model="product.paymentinstruction"></label><br>
-    <label>Image name: <input type="text" ng-model="product.image"></input></label><br>
-    <p>Product JSON: {{product}}</p>
-    <p>Success Message: {{message}}</p>
-    <input type="submit" id="submit" value="submit" ng-click="submit()"/>
+    <table class="table">
+      <tr>
+        <td><label>Product Name:</label></td>
+        <td><input type="text" ng-model="product.productname"></input></td>
+      </tr>
+      <tr>
+        <td><label>Description:</label></td>
+        <td><input type="text" ng-model="product.productdescription"></input></td>
+      </tr>
+      <tr>
+        <td><label>Price:</label></td>
+        <td><input type="text" ng-model="product.price"></input></td>
+      </tr>
+      <tr>
+        <td><label>Effective from:</label></td>
+        <td><input type="text" ng-model="product.effectivedate"></input>
+        </tr>
+      <tr>
+        <td><label>Expiry Date:</label></td>
+        <td><input type="password" ng-model="product.expirydate"></input></td>
+      </tr>
+      <tr>
+        <td><label>Payment Instructions:</label></td>
+        <td><input type="text" ng-model="product.paymentinstruction"></td>
+      </tr>
+      <tr>
+        <td><label>Image name:</label></td>
+        <td><input type="text" ng-model="product.image"></input></td>
+      </tr>
+    </table>
+    <input type="submit" id="submit" value="submit" class="pull-right" ng-click="submit()"/>
+    <!--<p>Product JSON: {{product}}</p>
+    <p>Success Message: {{message}}</p>-->
+
 </div>

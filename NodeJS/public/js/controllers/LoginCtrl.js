@@ -1,5 +1,5 @@
 //public/js/controllers/LoginCtrl.js
-app.controller('LoginCtrl', function($scope, $http, LoginService) {
+app.controller('LoginCtrl', function($scope, $http, $location, LoginService) {
   $scope.user = {
     userid: '',
     password: ''
@@ -8,7 +8,7 @@ app.controller('LoginCtrl', function($scope, $http, LoginService) {
       $http.post("/api/user", $scope.user).
         success(function(data, status, headers, config) {
           LoginService.loginUser(data[0]);
-          $scope.message = 'Success!' + LoginService.getUser();
+          $location.path("/");
           console.log(LoginService.getUser());
           // this callback will be called asynchronously
           // when the response is available

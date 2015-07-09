@@ -1,5 +1,6 @@
 app.factory('LoginService', function() {
   var loggedInUser = "";
+  var loggingIn = false;
   var loginUser = function(newObj){
     loggedInUser = angular.copy(newObj);
   };
@@ -15,10 +16,21 @@ app.factory('LoginService', function() {
     }
     return true;
   };
+
+  var loggingIn = function() {
+    loggingIn = true;
+  };
+
+  var isLoggingIn = function() {
+    return loggingIn;
+  }
+
   return {
     loginUser: loginUser,
     logoffUser: logoffUser,
     getUser: getUser,
-    userAuthenticated: userAuthenticated
+    userAuthenticated: userAuthenticated,
+    loggingIn: loggingIn,
+    isLoggingIn: isLoggingIn
   };
 });

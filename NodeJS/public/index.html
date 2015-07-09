@@ -34,7 +34,7 @@
     <!-- ANGULAR DIRECTIVES -->
     <script src="js/directives/appProduct.js"></script>
 </head>
-<body ng-app="sampleApp">
+<body ng-app="sampleApp" ng-controller="MainCtrl">
 <div class="container">
 
     <!-- HEADER -->
@@ -47,7 +47,8 @@
         <ul class="nav navbar-nav">
             <li><a href="/AddProduct">Add a Product</a></li>
             <li><a href="/RemoveProduct">Remove a Product</a></li>
-            <li><a id="register" href="/Register">Register</a></li>
+            <li ng-if="authenticated == false"><a href="/Register">{{authenticated}}</a></li>
+            <li ng-if="authenticated == true && currentUser != 'login'"><a>Welcome {{currentUser.userid}}!</a></li>
             <!--<li><a href="/Login">Login</a></li>-->
         </ul>
     </nav>
