@@ -28,7 +28,17 @@
       </tr>
       <tr>
         <td><label>Image name:</label></td>
+        <td>
+          <select size="1" ng-model="product.image">
+          <option>DressDown.jpg</option>
+          <option>Samosa.png</option>
+          <option>Pizza.png</option>
+          <option>unitedway.png</option>
+        </select>
+       </td>
+        <!--
         <td><input type="text" ng-model="product.image"></input></td>
+      -->
       </tr>
     </table>
     <input type="submit" id="submit" value="submit" class="pull-right" ng-click="submit()"/>
