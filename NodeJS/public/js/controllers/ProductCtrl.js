@@ -1,12 +1,21 @@
 // public/js/controllers/RegisterCtrl.js
 app.controller('ProductCtrl', function($scope, $http, $location, LoginService) {
+    $scope.open = function($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
 
+      $scope.opened = true;
+  };
+  $scope.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
     $scope.product = {
       productname : '',
       productdescription : '',
       price : '',
-      effectivedate : '',
-      expirydate : '',
+      effectivedate : new Date(),
+      expirydate : new Date(),
       ownerid : LoginService.getUser().userid,
       paymentinstruction : '',
       image : ''

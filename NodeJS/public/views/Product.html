@@ -16,15 +16,25 @@
       </tr>
       <tr>
         <td><label>Effective from:</label></td>
-        <td><input type="text" ng-model="product.effectivedate"></input>
-        </tr>
+        <td>
+            <p class="input-group col-md-4" >
+              <input type="date" class="form-control" datepicker-popup ng-model="product.effectivedate" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+            </p>
+        </td>
+      </tr>
       <tr>
         <td><label>Expiry Date:</label></td>
-        <td><input type="text" ng-model="product.expirydate"></input></td>
+        <td>
+          <p class="input-group col-md-4" >
+            <input type="date" class="form-control" datepicker-popup ng-model="product.expirydate" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+          </p>
+        </td>
       </tr>
       <tr>
         <td><label>Payment Instructions:</label></td>
-        <td><input type="text" ng-model="product.paymentinstruction"></td>
+        <td>
+          <textarea ng-model="product.paymentinstruction" rows="4" cols="50"></textarea>
+        </td>
       </tr>
       <tr>
         <td><label>Image name:</label></td>
