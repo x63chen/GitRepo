@@ -17,7 +17,7 @@
               <td>{{purchase.quantity}}</td>
               <td>{{purchase.cost}}</td>
               <td>{{purchase.ownerid}}</td>
-              <td>{{purchase.datepurch}}</td>
+              <td>{{purchase.datepurch | limitTo:10}}</td>
             </tr>
           </table>
         </div>
@@ -36,7 +36,7 @@
               <td>{{sales.quantity}}</td>
               <td>{{sales.cost}}</td>
               <td>{{sales.userid}}</td>
-              <td>{{sales.datepurch}}</td>
+              <td>{{sales.datepurch | limitTo:10}}</td>
             </tr>
           </table>
         </div>
