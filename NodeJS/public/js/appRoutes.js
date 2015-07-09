@@ -6,7 +6,7 @@
         // home page
         .when('/', {
             templateUrl: 'views/home.html',
-            controller: 'MainController'
+            controller: 'MainCtrl'
         })
 
         // nerds page that will use the NerdController
@@ -17,17 +17,20 @@
 
         .when('/Register', {
             templateUrl: 'views/Register.html',
-            controller: 'RegisterController'
+            controller: 'RegisterCtrl'
         })
 
         .when('/AddProduct', {
             templateUrl: 'views/Product.html',
-            controller: 'ProductController'
+            controller: 'ProductCtrl'
         })
-        
+        .when('/ConfirmPurchase', {
+            templateUrl: 'views/confirmPurchase.html',
+            controller: 'PurchaseCtrl'
+        })
         .when('/Login', {
             templateUrl: 'views/Login.html',
-            controller: 'LoginController'
+            controller: 'LoginCtrl'
         });
 
     $locationProvider.html5Mode(true);

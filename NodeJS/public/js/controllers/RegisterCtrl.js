@@ -1,5 +1,5 @@
 // public/js/controllers/RegisterCtrl.js
-angular.module('RegisterCtrl', []).controller('RegisterController', function($scope, $http, LoginService) {
+app.controller('RegisterCtrl', function($scope, $http, LoginService) {
 
     $scope.user = {
       userid : '',

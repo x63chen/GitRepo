@@ -1,4 +1,4 @@
-app.directive('appProduct', function(ProductService) {
+app.directive('appProduct', function(ProductService, $location) {
   return {
       scope: {
           info: '='
@@ -7,9 +7,8 @@ app.directive('appProduct', function(ProductService) {
       link: function(scope, element, attrs) {
         scope.buttonText = 'Purchase',
         scope.purchase = function(currObj) {
-
           ProductService.addProduct(currObj);
-          scope.buttonText = ProductService.getProduct();
+          $location.path('/ConfirmPurchase');
         }
       }
     };

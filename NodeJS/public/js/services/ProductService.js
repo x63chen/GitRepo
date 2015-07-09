@@ -6,6 +6,7 @@ app.factory('ProductService', function() {
   };
 
   var getProduct = function(){
+      console.log(productToBuy);
       return productToBuy;
   };
 

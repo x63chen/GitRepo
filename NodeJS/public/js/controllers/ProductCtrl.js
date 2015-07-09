@@ -1,5 +1,5 @@
 // public/js/controllers/RegisterCtrl.js
-angular.module('ProductCtrl', []).controller('ProductController', function($scope, $http) {
+app.controller('ProductCtrl', function($scope, $http) {
 
     $scope.product = {
       productname : '',

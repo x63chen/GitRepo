@@ -1,5 +1,5 @@
 // public/js/controllers/MainCtrl.js
-angular.module('MainCtrl', []).controller('MainController', function($scope, $http, ProductService, LoginService) {
+app.controller('MainCtrl', function($scope, $http, ProductService, LoginService) {
 
     $http.get("/api/products").
     success(function(data, status, headers, config) {
@@ -9,7 +9,6 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
       // called asynchronously if an error occurs
       // or server returns response with an error status.
     });
-    $scope.currentProduct = ProductService.getProduct();
     $scope.currentUser = LoginService.userAuthenticated();
 
 });

@@ -1,5 +1,5 @@
 //public/js/controllers/LoginCtrl.js
-angular.module('LoginCtrl', []).controller('LoginController', function($scope, $http, LoginService) {
+app.controller('LoginCtrl', function($scope, $http, LoginService) {
   $scope.user = {
     userid: '',
     password: ''
