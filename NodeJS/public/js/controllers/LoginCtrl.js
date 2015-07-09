@@ -5,7 +5,7 @@ angular.module('LoginCtrl', []).controller('LoginController', function($scope, $
     password: ''
   };
   $scope.submit = function() {
-      $http.post("http://localhost:8080/api/user", $scope.user).
+      $http.post("/api/user", $scope.user).
         success(function(data, status, headers, config) {
           $scope.message = 'Success!' + JSON.stringify(data);
           console.log(data[0]);
