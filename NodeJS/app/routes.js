@@ -136,6 +136,20 @@ var Purchase = require('./models/Purchase')
             });
         });
 
+        app.post('/api/mySales', function(req, res) {
+            // use mongoose to get all products in the database
+            var ownerSearch = {ownerid: req.body.ownerid};
+            Purchase.find(ownerSearch,function(err, purchases) {
+
+                // if there is an error retrieving, send the error.
+                // nothing after res.send(err) will execute
+                if (err)
+                    res.send(err);
+
+                res.json(purchases); // return all products in JSON format
+            });
+        });
+
 
         app.put('/api/updateproduct', function(req, res) {
 

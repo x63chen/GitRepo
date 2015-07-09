@@ -48,9 +48,7 @@
         <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
         <ul class="nav navbar-nav">
             <li><a href="/AddProduct">Add a Product</a></li>
-            <li><a href="/RemoveProduct">Remove a Product</a></li>
-            <li><a href="/PurchaseHistory">My Purchases</a></li>
-            <li><a href="/SaleHistory">My Sales</a></li>
+            <li><a href="/PurchaseHistory">Purchase/Sale History</a></li>
             <li ng-if="authenticated == false"><a href="/Register">Register</a></li>
             <li ng-if="authenticated == true && currentUser != 'login'"><a>Welcome {{currentUser.userid}}!</a></li>
             <!--<li><a href="/Login">Login</a></li>-->

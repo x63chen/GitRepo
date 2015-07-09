@@ -14,7 +14,7 @@ app.controller('ProductCtrl', function($scope, $http, $location, LoginService) {
 
     $scope.message = '';
     $scope.submit = function() {
-        $http.post("http://localhost:8080/api/addproduct", $scope.product).
+        $http.post("/api/addproduct", $scope.product).
           success(function(data, status, headers, config) {
             $scope.message = 'Success!';
             $location.path("/");
