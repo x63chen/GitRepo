@@ -1,0 +1,29 @@
+<!-- public/views/home.html -->
+
+<div>
+    <h1>My Sale History</h1>
+    <br><br><br>
+    <div class="row">
+      <div>
+        <table class="table">
+          <th>Product Name</th>
+          <th>Quantity Sold</th>
+          <th>Total Revenue</th>
+          <th>Sold to</th>
+          <th>Date Sold</th>
+          <tr ng-repeat="sale in MySales">
+            <td>{{sale.productid}}</td>
+            <td>{{sale.quantity}}</td>
+            <td>{{sale.revenue}}</td>
+            <td>{{sale.sellerid}}</td>
+            <td>{{sale.datesold}}</td>
+          </tr>
+        </table>
+      </div>
+      <!--<p>Current Product: {{currentProduct}}</p>
+      <p>Current User: {{currentUser}}</p>-->
+    </div>
+    <!--<div class="row">
+      <h2>Upcoming</h2>
+    </div>-->
+</div>
