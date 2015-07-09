@@ -9,4 +9,12 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $ht
       // called asynchronously if an error occurs
       // or server returns response with an error status.
     });
+}).directive('app-product', function() {
+  return {
+      restrict: 'E',
+      scope: {
+          info: '='
+      },
+      templateUrl: '/js/directives/appProduct.html'
+  };
 });

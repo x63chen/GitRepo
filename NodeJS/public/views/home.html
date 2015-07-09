@@ -1,7 +1,13 @@
 <!-- public/views/home.html -->
 
-<div class="jumbotron text-center">
+<div class="jumbotron">
     <h1>Welcome to the RBC Employee Giving Fundraising Tool</h1>
-
-    <p ng-repeat="product in products">{{ product }}</p>
+    <h2>Current Sales</h2>
+    <div class="col-md-6" ng-repeat="product in products">
+      <img class="icon" ng-src="{{product.image}}">
+      <h2 class="title">{{product.productname}}</h2>
+      <p class="description">{{product.productdescription}}</p>
+      <p class="price">{{product.price | currency}}</p>
+    </div>
+    <h2>Upcoming</h2>
 </div>
