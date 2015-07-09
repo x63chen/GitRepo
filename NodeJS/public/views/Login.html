@@ -4,6 +4,9 @@
     <h1>Login</h1>
     <table class="table">
       <tr>
+        <p ng-if="message != ''" style="color:red">{{message}}</p>
+      </tr>
+      <tr>
         <td><label>UserID:</label></td>
         <td><input type="text" placeholder="Enter UserID" ng-model="user.userid"></input></td>
       </tr>

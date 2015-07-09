@@ -4,6 +4,7 @@
 var Nerd = require('./models/nerd');
 var User = require('./models/User');
 var Product = require('./models/product');
+var Purchase = require('./models/Purchase')
 
     module.exports = function(app) {
 
@@ -50,12 +51,13 @@ var Product = require('./models/product');
 
         app.post('/api/user', function(req, res) {
           // Get our form values. These rely on the "name" attributes
-
-          var reqUserid = req.body.userid;
-          //aUser.password = req.body.password;
+          var newUser = {
+            userid: req.body.userid,
+            password: req.body.password
+          };
 
           // Save the data
-          User.find({userid: reqUserid}, function(err, user) {
+          User.find(newUser, function(err, user) {
             if (err)
                 res.send(err);
 
@@ -94,6 +96,29 @@ var Product = require('./models/product');
                   res.send(err);
               }
               res.json({ message: 'Product created!' });
+            });
+        });
+
+        app.post('/api/addpurchase', function(req, res) {
+            var newPurchase = new Purchase();
+            newPurchase.userid = req.body.userid;
+            newPurchase.quantity = req.body.quantity;
+            newPurchase.cost = req.body.cost;
+            newPurchase.productid = req.body.productid;
+            newPurchase.datepurch = req.body.datepurch;
+            newPurchase.pmttype = req.body.pmttype;
+            newPurchase.comments = req.body.comments;
+            newPurchase.paid = req.body.paid;
+            newPurchase.pmtdate = req.body.pmtdate;
+            newPurchase.delivered = req.body.delivered;
+            newPurchase.delivdate = req.body.delivdate;
+
+            // Save the data
+            newPurchase.save(function(err) {
+              if (err) {
+                  res.send(err);
+              }
+              res.json({ message: 'Purchase created!' });
             });
         });
 

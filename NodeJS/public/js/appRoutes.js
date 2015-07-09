@@ -31,6 +31,10 @@
         .when('/Login', {
             templateUrl: 'views/Login.html',
             controller: 'LoginCtrl'
+        })
+        .when('/Success', {
+            templateUrl: 'views/Success.html',
+            controller: 'SuccessCtrl'
         });
 
     $locationProvider.html5Mode(true);

@@ -27,7 +27,7 @@
       <table class="table">
         <tr>
           <td>Quantity:</td>
-          <td><input type="text" ng-model="quantity"></td>
+          <td><input type="text" ng-model="purchase.quantity"></td>
         </tr>
         <tr>
           <td>Price:</td>
@@ -35,11 +35,11 @@
         </tr>
         <tr>
           <td>Total:</td>
-          <td>{{currentProduct.price * quantity | currency}}</td>
+          <td>{{currentProduct.price * purchase.quantity | currency}}</td>
         </tr>
       </table>
       <div class="pull-right">
-          <input type="submit" id="submit" value="submit" ng-click="submit()"/>
+          <input type="submit" id="submit" value="submit" ng-click="submitPurchase()"/>
       </div>
     </div>
   </div>
