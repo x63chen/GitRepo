@@ -16,7 +16,7 @@ angular.module('RegisterCtrl', []).controller('RegisterController', function($sc
     $scope.message = '';
 
     $scope.submit = function() {
-        $http.post("http://localhost:8080/api/register", $scope.user).
+        $http.post("/api/register", $scope.user).
           success(function(data, status, headers, config) {
             $scope.message = 'Success!';
             // this callback will be called asynchronously
