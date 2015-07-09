@@ -89,7 +89,7 @@ var Purchase = require('./models/Purchase')
             newProduct.expirydate = req.body.expirydate;
             newProduct.ownerid = req.body.ownerid;
             newProduct.paymentinstruction = req.body.paymentinstruction;
-            newProduct.image = req.body.image;
+            newProduct.image = "/img/" + req.body.image;
             // Save the data
             newProduct.save(function(err) {
               if (err) {
